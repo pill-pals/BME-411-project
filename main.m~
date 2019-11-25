@@ -71,8 +71,8 @@ costFunc = @(n,lum)n*(30+incandescent(lum));
 %[cost, lights] = getLowestCostForNLights(width, height, n, luxThresh, delta, costFunc);
 
 costs = [];
-startN = 40;
-endN = 65;
+startN = 50;
+endN = 75;
 for i = startN:endN
     costs(i) = getLowestCostForNLights(width, height, i, luxThresh, delta, costFunc);
     i

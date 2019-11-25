@@ -1,0 +1,12 @@
+width = 10;
+height = 30;
+delta = 0.5;
+
+ledNum = 42;
+clfNum = 42;
+incandescentNum = 53;
+halogenNum = 29;
+
+ledLights = getOptimalLightLocationsAlt(width, height, ledNum);
+ledLowestPoint = getLowestLightCoords(width, height, lights, delta);
+minimumLum = determineMinimumLum(lights, lowestPoint, luxThresh);
