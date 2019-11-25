@@ -1,6 +1,6 @@
-width = 100;
-height = 100;
-delta = 0.1;
+width = 30;
+height = 70;
+delta = 0.5;
 n = 100;
 
 [lights, lightsHist] = getOptimalLightLocationsAlt(width,height,n);

@@ -12,7 +12,8 @@ function [lights lightsHist] = getOptimalLightLocationsAlt(width, height, n)
     mul = (width * height)/(10 * n);
     
     histCount = 1;
-    while (movementVal > movementSettlingPoint)
+    movementValHistory = (1:50);
+    while (movementVal >= movementSettlingPoint || range(movementValHistory(end-50+1:end)) >= movementSettlingPoint)
         lightsHist(:,:,histCount) = newLights;
         histCount = histCount + 1;
         lights = newLights;
@@ -62,6 +63,7 @@ function [lights lightsHist] = getOptimalLightLocationsAlt(width, height, n)
         end
         % normalize the movementVal by number of lights
         movementVal = movementVal / n;
+        movementValHistory(end+1) = movementVal;
     end
 end
 
